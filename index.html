@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Muhammad Bilad Abdul Azis</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --primary: #ef4444; /* Vibrant Red */
+        --primary-light: #3b0712; /* Deep Burgundy / Wine */
+        --primary-dark: #f87171; /* Light Red for dark mode contrast */
+        --accent: #f87171; /* Light Red Accent */
+        --bg: #150205; /* Luxurious dark red-black */
+        --card-bg: #25050b; /* Deep velvet-red card */
+        --text-main: #fff5f5; /* Crisp clean white-red text */
+        --text-muted: #fca5a5; /* Soft light red */
+        --border-color: #3f0712; /* Dark red border */
+        --shadow-sm: 0 4px 6px -1px rgba(239, 68, 68, 0.05);
+        --shadow-md: 0 10px 15px -3px rgba(239, 68, 68, 0.1), 0 4px 6px -2px rgba(239, 68, 68, 0.05);
+        --shadow-lg: 0 20px 25px -5px rgba(239, 68, 68, 0.15), 0 10px 10px -5px rgba(239, 68, 68, 0.08);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg);
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(239, 68, 68, 0.15) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(248, 113, 113, 0.1) 0px, transparent 50%),
+          radial-gradient(at 50% 100%, rgba(252, 165, 165, 0.1) 0px, transparent 50%);
+        background-attachment: fixed;
+        color: var(--text-main);
+        line-height: 1.65;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Header / Navbar */
+      header {
+        background-color: rgba(21, 2, 5, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+        padding: 16px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        transition: var(--transition);
+      }
+
+      header h1 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+        background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.5px;
+      }
+
+      nav {
+        display: flex;
+        gap: 24px;
+      }
+
+      nav a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        transition: var(--transition);
+        position: relative;
+        padding: 4px 0;
+      }
+
+      nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        transition: var(--transition);
+      }
+
+      nav a:hover {
+        color: var(--primary-dark);
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      /* Main Content Layout */
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      /* Profil Card */
+      .profile-container {
+        max-width: 760px;
+        width: 100%;
+        background-color: var(--card-bg);
+        padding: 48px 40px;
+        border-radius: 24px;
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-lg);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      .profile-container:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 45px -5px rgba(239, 68, 68, 0.15);
+      }
+
+      /* Top accent strip */
+      .profile-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+      }
+
+      /* Foto Profil Lingkaran */
+      .img-wrapper {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 28px auto;
+        border: 6px solid var(--card-bg);
+        outline: 2px solid var(--primary);
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 20%; /* Adjusted to show both head and chest inside the circle */
+        transition: var(--transition);
+      }
+
+      .img-wrapper:hover {
+        outline-color: var(--primary-dark);
+        transform: scale(1.03);
+      }
+
+      .img-wrapper:hover img {
+        transform: scale(1.08);
+      }
+
+      /* Nama & Bio */
+      h2 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        color: var(--text-main);
+        margin-bottom: 16px;
+        letter-spacing: -0.5px;
+      }
+
+      .bio {
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.75;
+        margin-bottom: 36px;
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: justify;
+        text-align-last: center;
+      }
+
+      .bio-quote {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--primary-dark);
+        margin-bottom: 18px;
+        display: block;
+        letter-spacing: -0.2px;
+      }
+
+      /* Tombol Sosial Media */
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 24px;
+        border: 1.5px solid var(--border-color);
+        border-radius: 12px;
+        color: var(--text-main);
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        transition: var(--transition);
+        background-color: var(--card-bg);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .social-links a svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+      }
+
+      /* Platform-specific dynamic hover states */
+      .social-links a.tiktok:hover {
+        background-color: #010101;
+        border-color: #010101;
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(1, 1, 1, 0.2);
+      }
+
+      .social-links a.github:hover {
+        background-color: #24292e;
+        border-color: #24292e;
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(36, 41, 46, 0.2);
+      }
+
+      .social-links a.instagram:hover {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        border-color: transparent;
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(220, 39, 67, 0.25);
+      }
+
+      .social-links a.drive:hover {
+        background-color: #0f9d58;
+        border-color: #0f9d58;
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(15, 157, 88, 0.25);
+      }
+
+      .social-links a.email:hover {
+        background-color: #ea4335;
+        border-color: #ea4335;
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(234, 67, 53, 0.25);
+      }
+
+      .social-links a.youtube:hover {
+        background-color: #ff0000;
+        border-color: #ff0000;
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(255, 0, 0, 0.25);
+      }
+
+      .social-links a.facebook:hover {
+        background-color: #1877f2;
+        border-color: #1877f2;
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(24, 119, 242, 0.25);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 24px;
+        font-size: 13px;
+        color: var(--text-muted);
+        border-top: 1px solid var(--border-color);
+        background-color: rgba(21, 2, 5, 0.75);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      /* Responsiveness / Media Queries */
+      @media (max-width: 768px) {
+        header {
+          padding: 16px 24px;
+        }
+
+        .profile-container {
+          padding: 40px 24px;
+        }
+
+        h2 {
+          font-size: 24px;
+        }
+
+        .bio {
+          font-size: 14.5px;
+          margin-bottom: 28px;
+        }
+      }
+
+      @media (max-width: 580px) {
+        header {
+          flex-direction: column;
+          gap: 12px;
+          padding: 16px 12px;
+          text-align: center;
+        }
+
+        nav {
+          gap: 16px;
+        }
+
+        .img-wrapper {
+          width: 160px;
+          height: 160px;
+          margin-bottom: 20px;
+        }
+
+        .social-links {
+          flex-direction: column;
+          width: 100%;
+          gap: 12px;
+        }
+
+        .social-links a {
+          width: 100%;
+          padding: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <header>
+      <h1>Muhammad Bilad Abdul Azis</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Tentang Saya</a>
+        <a href="#">Keahlian</a>
+        <a href="#">Proyek</a>
+        <a href="#">Kontak</a>
+      </nav>
+    </header>
+
+    <!-- Main Profile Page Content -->
+    <main>
+      <div class="profile-container">
+        <!-- Optimized Profile Photo Frame -->
+        <div class="img-wrapper">
+          <img src="abcd.jpeg" alt="Foto Muhammad Bilad Abdul Azis" />
+        </div>
+
+        <h2>Muhammad Bilad Abdul Azis</h2>
+        
+        <!-- Highlighted Motivational Quote -->
+        <span class="bio-quote">“Empowering Young Minds, Inspiring Creative Pedagogy.”</span>
+        
+        <!-- Profile Bio text -->
+        <p class="bio">
+          Sebagai mahasiswi Pendidikan Guru Sekolah Dasar (PGSD) di Universitas Jember, saya berdedikasi tinggi untuk merancang masa depan anak bangsa melalui pembelajaran yang edukatif dan menyenangkan. Ketertarikan saya berfokus pada integrasi teknologi modern dalam dunia pendidikan anak, sembari tetap berkomitmen memberikan kontribusi nyata bagi pengembangan masyarakat.
+        </p>
+        <p class="bio" style="margin-top: -20px; margin-bottom: 30px;">
+          Melalui ruang portofolio digital ini, saya mendokumentasikan dedikasi dan keterampilan saya—mulai dari peran aktif dalam relawan pendidikan, partisipasi aktif dalam seminar profesional, hingga kreasi media pembelajaran inovatif yang dirancang untuk membentuk karakter emas generasi penerus.
+        </p>
+
+        <!-- Social Media Buttons -->
+        <div class="social-links">
+          <!-- TikTok Link -->
+          <a href="https://www.tiktok.com/@biladazis?_r=1&_t=ZS-973sgVJYpEa" target="_blank" class="tiktok">
+            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.17v57.41a105.14,105.14,0,1,0,40.23,83V0h60.27a110.15,110.15,0,0,0,10.66,42.81,109.28,109.28,0,0,0,32.33,38.86A111.45,111.45,0,0,0,381.08,98.6h.4v111.3Z"/>
+            </svg>
+            TikTok
+          </a>
+          <!-- GitHub Link -->
+          <a href="https://github.com/azisbilad-design/Muhammad-Bilad-Abdul-Azis" target="_blank" class="github">
+            <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.5 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5.7 1.3-1.6.7-4.6-1.3-6.2-2.2-2.3-5.2-2.6-6.5-.7zm-14.4-17.1c-1.2 1-1.2 3.3.7 4.9 1.9 1.6 4.3 1.3 5.6-1 1.2-2.3 1.2-4.6-.7-4.9-1.9-1.6-4.3-1.3-5.6 1z"/>
+            </svg>
+            GitHub
+          </a>
+          <!-- Instagram Link -->
+          <a href="https://www.instagram.com/bilad_azis?igsh=MXB5bzhieG40cW80eA==" target="_blank" class="instagram">
+            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+            </svg>
+            Instagram
+          </a>
+          <!-- Google Drive Link -->
+          <a href="https://drive.google.com/drive/folders/1-bbo1esp3cyhJgp_wMR5o3eELzpa829W" target="_blank" class="drive">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M339 314.9L175.4 32h161.2l163.6 282.9H339zm-162 26.2L92.2 480h327.6l84.8-138.9H177zm-32.4-26.2L60 173.1 142.8 32h84.8L144.6 314.9z"/>
+            </svg>
+            Google Drive
+          </a>
+          <!-- Email Link -->
+          <a href="mailto:azisbilad@gmail.com" target="_blank" class="email">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313c11.5 8.6 27 8.6 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+            </svg>
+            Email
+          </a>
+          <!-- YouTube Link -->
+          <!-- <a href="https://youtube.com/@ayin511" target="_blank" class="youtube">
+            <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
+            </svg>
+            YouTube
+          </a> -->
+          <!-- Facebook Link -->
+          <a href="https://www.facebook.com/bilad.azis" target="_blank" class="facebook">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>&copy; 2026 Muhammad Bilad Abdul Azis. All rights reserved.</footer>
+  </body>
+</html>
